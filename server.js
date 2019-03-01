@@ -1,6 +1,10 @@
 const express = require("express");
 
 const app = express();
+const passport = require("passport");
+const session =require("session");
+const bodyParser = require("body-parser");
+
 const PORT = process.env.PORT || 8080;
 
 const db = require("./models");
@@ -8,7 +12,16 @@ const db = require("./models");
 app.use(express.urlencoded({extended: true}));
 app.use(express.json());
 
+app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.json());
+
+app.use(session({secret: 'keyboard cat',resave: true, saveUninitialized:true}));
+app.use(passport.initialize());
+app.use(passport.session());
+
 app.use(express.static("public"));
+
+reqquire('./config/passport/passport.js')(passport, models.user);
 
 //routes to be added here
 
