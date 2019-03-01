@@ -1,4 +1,5 @@
 const bCrypt = require("bcrypt-nodejs");
+const db = require("./models");
 
 module.exports = function(passport, user) {
     const LocalStrategy = require('passport-local').Strategy;
@@ -6,12 +7,11 @@ module.exports = function(passport, user) {
     passport.use(new LocalStrategy(
         function(username, password, cb) {
 
-        const User = user;   
         const isValidPassword = function(userpass, password) {
             return bCrypt.compareSync(password, userpass);
         }
 
-        User.findOne(username, function(err, user) {
+        db.User.findOne(username, function(err, user) {
             if(err) {
                 return cb(err);
              }
@@ -29,13 +29,13 @@ module.exports = function(passport, user) {
              }
         ));
     
-        
+
     passport.serializedUser(function(user, cb) {
         cb(null, user.id);
     });
 
     passport.deserializedUser(function(id, cb) {
-        db.Users.findById(id, function(err, user) {
+        db.User.findById(id, function(err, user) {
             if(err) {
                 return cb(err);
             }
