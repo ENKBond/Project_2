@@ -29,8 +29,9 @@ app.get('/', function(req, res) {
 });
  
 
-reqquire('./config/passport/passport.js')(passport, models.user);
+require('./config/passport/passport.js')(passport, models.user);
 
+const authRoute = require('./app/routes/auth.js')(app);
 
 //routes to be added here
 

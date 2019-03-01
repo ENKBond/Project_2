@@ -4,14 +4,24 @@ const db = require("./models");
 module.exports = function(passport, user) {
     const LocalStrategy = require('passport-local').Strategy;
 
-    passport.use(new LocalStrategy(
-        function(username, password, cb) {
+    passport.use('local-signin', new LocalStrategy(
+        {
+            username: 'username',
+            password: 'password',
+            passReqToCallback: true
+        },
+        function(req, username, password, cb) {
 
         const isValidPassword = function(userpass, password) {
             return bCrypt.compareSync(password, userpass);
         }
 
-        db.User.findOne(username, function(err, user) {
+        db.User.findOne({
+            where: {
+                username: username
+            }
+         }).then( function(err, user) {
+
             if(err) {
                 return cb(err);
              }
@@ -25,6 +35,10 @@ module.exports = function(passport, user) {
                      message: "Incorrect password"
                  });
              }
+
+             var userInfo = user.get();
+             return cb(null, userInfo);
+
                  });
              }
         ));
