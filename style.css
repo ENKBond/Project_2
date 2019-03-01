@@ -1,0 +1,9 @@
+#navbar{
+    background-color: #54637a;
+}
+    .parallax-container {
+        min-height: 380px;
+        line-height: 0;
+         height: auto;
+         color: rgba(255,255,255,.9);
+      }
