@@ -10,6 +10,13 @@ app.use(express.json());
 
 app.use(express.static("public"));
 
+app.get('/', function(req, res) {
+ 
+    res.send('Welcome to Passport with Sequelize');
+ 
+});
+ 
+
 //routes to be added here
 
 db.sequelize.sync({force: true}).then(function() {
