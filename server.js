@@ -21,7 +21,16 @@ app.use(passport.session());
 
 app.use(express.static("public"));
 
+
+app.get('/', function(req, res) {
+ 
+    res.send('Welcome to Passport with Sequelize');
+ 
+});
+ 
+
 reqquire('./config/passport/passport.js')(passport, models.user);
+
 
 //routes to be added here
 
