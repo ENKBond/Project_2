@@ -1,22 +1,3 @@
-const Users = (../models/host.js)
- 
-
-//ROUTING
-
-app.post("/api/Users", function(req, res) {
-    // Note the code here. Our "server" will respond to a user"s survey result
-   
-
-    // We will use this object to hold the "best match". We will constantly update it as we
-    // loop through all of the options
-    var bestMatch = {
-      user_name: "",
-      photo: "",
-      userDifference: Infinity
-    };
-
-
-
 //taking the results of the surveys.
 const userData = req.body;
 const quizScores = quizScores.quiz_scores;
