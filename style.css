@@ -1,9 +1,49 @@
-#navbar{
+
+.parallax-container {
+     min-height: 380px;
+    line-height: 0;
+     height: auto;
+     color: rgba(255,255,255,.9);
+      }
+
+    #main-header{
+        opacity:.9;
+    }
+
+#icons{
+    color:#203a3a;
+}
+
+h1{
+    font-family: 'Bungee Shade', cursive;
+    
+}
+
+#welcome-text{
+    background-color: white;
+    color: #203a3a;
+    
+}
+#sub-header{
     background-color: #54637a;
 }
-    .parallax-container {
-        min-height: 380px;
-        line-height: 0;
-         height: auto;
-         color: rgba(255,255,255,.9);
-      }
+.button-center{
+    float: right;
+  width: 70%;
+  padding: 10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+   
+}
+#start-button{
+    text-align: center;
+    width: 70%;
+}
+
+#perrito{
+    margin-top: -200px;
+    width:1000px;
+    height: 1000px;
+}
+
