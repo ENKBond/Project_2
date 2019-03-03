@@ -23,7 +23,7 @@ for(let j = 0; j < currentUser.quiz_scores.length; j++){
    // If the sum of differences is less then the differences of the current "best match"
    if (totalDifference <= bestMatch.userDifference) {
     // Reset the bestMatch to be the new friend.
-    bestMatch.name = currentUser.user_name;
+    bestMatch.Usernname = currentUser.user_name;
     bestMatch.photo = currentUser.quizScores;
     bestMatch.userDifference = totalDifference;
   }
