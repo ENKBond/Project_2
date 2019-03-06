@@ -9,6 +9,7 @@ $("#agree").on("click", function(event) {
     $.post("/api/signup", newUser)
         .then(function(data) {
             console.log(data);
+            window.location= "../survey.html"
         });
 
     $("#username").val(" ");

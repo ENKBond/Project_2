@@ -14,8 +14,8 @@ module.exports = function(app) {
             username: req.body.username,
             password: req.body.password
         }).then(function() {
-            res.redirect(307, "/api/login");
-            // res.redirect("/survey");
+            res.redirect(200, "../survey.html");
+            // res.redirect("./survey.html");
         }).catch(function(err) {
             console.log(err);
             res.json(err);
