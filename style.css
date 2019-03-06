@@ -1,4 +1,4 @@
-
+/* Index Page */
 .parallax-container {
      min-height: 380px;
     line-height: 0;
@@ -25,7 +25,10 @@ h1{
     
 }
 #sub-header{
-    background-color: #54637a;
+    background-color: #009e89;
+    padding: 15px;
+    font-weight: 20px;
+    border: 2px solid white;
 }
 .button-center{
     float: right;
@@ -39,6 +42,7 @@ h1{
 #start-button{
     text-align: center;
     width: 70%;
+    
 }
 
 #perrito{
@@ -47,3 +51,14 @@ h1{
     height: 1000px;
 }
 
+.modal-content{
+    color: black;
+}
+
+/* Survey Html */
+
+
+#nav{
+    font-family: 'Bungee Shade', cursive;
+    background-color: #1e6666;
+}
