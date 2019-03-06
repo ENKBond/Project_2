@@ -20,6 +20,7 @@ module.exports = function(app) {
             console.log(err);
             res.json(err);
         });
+
     });
 
     //route for logging user out
