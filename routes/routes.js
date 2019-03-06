@@ -4,11 +4,12 @@
 
 // Dependencies
 // =============================================================
-var user = require("../models/user.js");
+// var user = require("../models/user.js");
 
 // const router = express.Router();
 
-const db = 
+// const db = 
+
 
 // Routes
 // =============================================================
@@ -59,3 +60,4 @@ app.get('/chat', function (req, res) {
 
     // });
 };
+
