@@ -8,18 +8,18 @@ module.exports = function(app) {
         if(req.user) {
             res.redirect("/members");
         }
-        res.sendFile(path.join(_dirname, "../public/signup.html"));
+        res.sendFile(path.join(__dirname, "../public/index.html"));
     });
 
     app.get("/login", function(req, res) {
         if(req.user) {
             res.redirect("/members");
         }
-        res.sendFile(path.join(_dirname, "../public/login.html"));
+        res.sendFile(path.join(__dirname, "../public/login.html"));
     });
 
     //if a user who is not logged in tries to access, they will be redirected to signup
     app.get("/members", isAuthenticated, function(req, res) {
-        res.sendFile(path.join(_dirname, "../public/members.thml"));
+        res.sendFile(path.join(__dirname, "../public/members.thml"));
     });
 };
