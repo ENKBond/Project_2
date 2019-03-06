@@ -1,31 +1,33 @@
 const express = require("express");
-
-const app = express();
 const bodyParser = require("body-parser");
+const session =require("express-session");
 
-const PORT = process.env.PORT || 8080;
+const passport = require("./config/passport");
 
+const PORT = process.env.PORT || 8000;
 const db = require("./models");
 
-app.use(express.urlencoded({extended: true}));
-app.use(express.json());
-
-app.use(bodyParser.urlencoded({extended: true}));
+const app = express();
+app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
-
-
 app.use(express.static("public"));
 
+app.use(session({ secret: "keyboard cat", resave: true, saveUninitialized: true }));
+app.use(passport.initialize());
+app.use(passport.session());
 
-app.get('/', function(req, res) {
- 
-    res.send('Welcome to Passport with Sequelize');
- 
-});
- 
+require("./routes/html-routes.js")(app);
+require("./routes/api-routes.js")(app);
 
 
-//routes to be added here
+
+
+// app.get('/', function(req, res) {
+ 
+//     res.send('Welcome to Passport with Sequelize');
+ 
+// });
+ 
 
 db.sequelize.sync({force: true}).then(function() {
     app.listen(PORT, function() {
