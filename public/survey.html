@@ -9,7 +9,7 @@
 
     <!-- Our CSS -->
     <link href="https://fonts.googleapis.com/css?family=Bungee+Shade" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
 
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -53,6 +53,7 @@
                     <div class="card-content white-text">
                         <span class="card-title" id="card-title">Question 2</span>
                         <p> If you could be any of these animals which would you be?</p>
+                        
                     </div>
                     <div class="card-action">
                         <select class="choices" id="q2">
@@ -148,7 +149,22 @@
 
         </div>
 
-        <a class="waves-effect waves-light btn"><i class="material-icons left">send</i>Submit Quiz</a>
+        
+        <a class="waves-effect waves-light btn modal-trigger" id="submit" href="#modal1"><i class="material-icons left">send</i>submit</a>
+        <div id="modal1" class="modal">
+                <div class="modal-content">
+                  <div class="modal-header"> 
+                      <h2 class="modal-title"><strong>Best Match</strong></h2>
+                      </div>
+                      <div class="modal-body">
+                            <h2 id="match-name"></h2>
+                            <img id="match-img" src="https://i.etsystatic.com/10078000/r/il/a93efe/840970766/il_570xN.840970766_i0px.jpg" alt="">
+                          </div>
+                </div>
+                <div class="modal-footer">
+                  <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+                </div>
+              </div>
 
 
 
@@ -168,7 +184,7 @@
     <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
         crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script src="logic.js"></script>
+    <script src="js/logic.js"></script>
 </body>
 
 </html>
