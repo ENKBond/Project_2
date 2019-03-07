@@ -16,6 +16,7 @@
 
 h1{
     font-family: 'Bungee Shade', cursive;
+    font-size: 40px;
     
 }
 
@@ -61,4 +62,13 @@ h1{
 #nav{
     font-family: 'Bungee Shade', cursive;
     background-color: #1e6666;
+}
+
+h2, h3 {
+    font-size: 30px;
+}
+
+
+.select{
+    background-color: white;
 }
