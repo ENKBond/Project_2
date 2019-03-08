@@ -64,4 +64,4 @@ typings/
 package-log.json
 
 # config.json
-/config/config.json
+config/config.json
