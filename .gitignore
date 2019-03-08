@@ -60,8 +60,15 @@ typings/
 # next.js build output
 .next
 
+
+
+config/config.json
+
+package-lock.json
+
 #package-lock.json
 package-log.json
 
 # config.json
 config/config.json
+

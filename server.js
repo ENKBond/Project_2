@@ -9,7 +9,7 @@ const passport = require("./config/passport");
 const PORT = process.env.PORT || 8000;
 const db = require("./models");
 
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 app.use(express.static("public"));
 
@@ -53,7 +53,6 @@ io.on('connection', function(socket){
         socket.broadcast.emit('typing', data);
     });
 });
-
 
 
 //routes to be added here
