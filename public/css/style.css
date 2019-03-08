@@ -45,3 +45,11 @@ h1{
    width:1000px;
    height: 1000px;
 }
+
+#signUpLabel{
+   color:  #54637a;
+}
+
+#alert{
+   color: red;
+}
