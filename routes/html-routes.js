@@ -26,12 +26,8 @@ module.exports = function(app) {
     // app.get("/members", isAuthenticated, function(req, res) {
     //     res.sendFile(path.join(__dirname, "../public/members.html"));
     // });
-};
 
-// Socket routing
-module.exports = function(socketApp) {
-    console.log("HELLO")
-    socketApp.get('/', function (req, res) {
+    app.get('/chat', function (req, res) {
         res.sendFile(__dirname, '../public/chat.html');
     });
-}
+};
