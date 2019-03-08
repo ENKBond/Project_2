@@ -5,12 +5,10 @@ module.exports = function(app) {
     //If the user already has an account, send them to the members page
     //using members and signup html as a filler right now
     app.get("/", function(req, res) {
-
-        console.log("Hello")
         if(req.user) {
             res.redirect("/public/survey.html");
         }
-        res.sendFile(path.join(__dirname, "../public/chat.html"));
+        res.sendFile(path.join(__dirname, "../public/index.html"));
     });
 
     // app.get("/login", function(req, res) {
