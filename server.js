@@ -13,7 +13,7 @@ const passport = require("./config/passport");
 const PORT = process.env.PORT || 8000;
 const db = require("./models");
 
-const app = express();
+
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 app.use(express.static("public"));
@@ -38,7 +38,8 @@ require("./routes/api-routes.js")(app);
 
 
 app.use(express.static("public"));
-require("./routes/routes.js")(app);
+require("./routes/api-routes.js")(app);
+require("./routes/html-routes.js")(app);
 
 
 // // Get chat page
