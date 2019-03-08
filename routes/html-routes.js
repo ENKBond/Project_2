@@ -5,10 +5,12 @@ module.exports = function(app) {
     //If the user already has an account, send them to the members page
     //using members and signup html as a filler right now
     app.get("/", function(req, res) {
+
+        console.log("Hello")
         if(req.user) {
             res.redirect("/public/survey.html");
         }
-        res.sendFile(path.join(__dirname, "../public/index.html"));
+        res.sendFile(path.join(__dirname, "../public/chat.html"));
     });
 
     // app.get("/login", function(req, res) {
@@ -27,3 +29,11 @@ module.exports = function(app) {
     //     res.sendFile(path.join(__dirname, "../public/members.html"));
     // });
 };
+
+// Socket routing
+module.exports = function(socketApp) {
+    console.log("HELLO")
+    socketApp.get('/', function (req, res) {
+        res.sendFile(__dirname, '../public/chat.html');
+    });
+}
