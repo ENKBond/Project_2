@@ -6,15 +6,13 @@
   "dependencies": {
     "bcrypt-nodejs": "0.0.3",
     "body-parser": "^1.18.3",
-    "cors": "^2.8.5",
     "express": "^4.16.4",
     "express-session": "^1.15.6",
-    "materialize-css": "^1.0.0-rc.2",
-    "mysql": "^2.16.0",
     "mysql2": "^1.6.5",
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
-    "sequelize": "^4.43.0",
+    "path": "^0.12.7",
+    "sequelize": "^4.42.0",
     "session": "^0.1.0",
     "socket.io": "^2.2.0"
   },
@@ -33,5 +31,5 @@
   "bugs": {
     "url": "https://github.com/ENKBond/Project_2/issues"
   },
-  "homepage": "https://github.com/ENKBond/Project_2#readme"
+  "homepage": "https://github.com/luisvega7/project2#readme"
 }
