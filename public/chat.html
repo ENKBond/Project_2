@@ -1,91 +1,26 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Chat</title>
-    <!-- Materialize -->
-    <!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <!-- jQuery -->
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
-        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-    <!-- Socket.io -->
-    <script src="/socket.io/socket.io.js"></script>
-    <script>
-        var socket = io();
-    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Chat Room</title>
+    <!-- Load Socket library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.dev.js"></script>
+    <link href="./css/chat.css" rel="stylesheet">
 </head>
-
 <body>
-    <div class="container">
-        <div id="messageArea" class="row">
-            <div class="col s4">
-                <div>
-                    <h3>Online Users</h3>
-                    <ul id="users"></ul>
-                </div>
-            </div>
-
-            <div class="col s8">
-                <div id="chat"></div>
-
-                <form id="messageForm">
-                    <div class="input-field col s8">
-                        <textarea id="message" class="materialize-textarea"></textarea>
-                        <label for="message">Enter Message</label>
-                        <br />
-                        <a type="submit" class="waves-effect waves-light btn">Submit</a>
-                    </div>
-                </form>
-            </div>
+    <div id="chat-room">
+        <div id="chat-window">
+            <div id="output"></div>
+            <div id="feedback"></div>
         </div>
+        <input id="handle" type="text" placeholder="Handle">
+        <input id="message" type="text" placeholder="Message">
+        <button id="send">Send</button>
     </div>
-
-    <script>
-        $(function () {
-            const socket = io.connect();
-            const $messageForm = $('#messageForm');
-            const $message = $('#message');
-            const $chat = $('#chat');
-            // const $messageArea = ('#messageArea');
-            const $userFormArea = $('#userFormArea');
-            const $userForm = $('#userForm');
-            const $users = $('#users');
-            const $username = $('#username');
-
-            $messageForm.submit(function (e) {
-                e.preventDefault();
-                socket.emit('send message', $message.val());
-                $message.val('');
-            });
-
-            socket.on('new message', function (data) {
-                $chat.append('<div class="well"><strong>' + data.user + '</strong>: ' + data.msg + '</div>');
-            });
-
-            $userForm.submit(function (e) {
-                e.preventDefault();
-                socket.emit('new user', $username.val(), function (data) {
-                    if (data) {
-                        $userFormArea.hide();
-                        $('#messageArea').show();
-                    }
-                });
-                $username.val('');
-            });
-
-            socket.on('get users', function (data) {
-                let html = '';
-                for (i = 0; i < data.length; i++) {
-                    html += '<li class="list-group-item">' + data[i] + '</li>'
-                }
-                $users.html(html);
-            });
-        });
-    </script>
+    
+    <!-- Link to JavaScript -->
+    <script src="./js/chat.js"></script>
 </body>
-
 </html>
