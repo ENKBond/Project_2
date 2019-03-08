@@ -1,14 +1,15 @@
-// *********************************************************************************
-// api-routes.js - this file offers a set of routes for displaying and saving data to the db
-// *********************************************************************************
+// // *********************************************************************************
+// // api-routes.js - this file offers a set of routes for displaying and saving data to the db
+// // *********************************************************************************
 
-// Dependencies
-// =============================================================
-// var user = require("../models/user.js");
+// // Dependencies
+// // =============================================================
+// // var user = require("../models/user.js");
 
-// const router = express.Router();
+// // const router = express.Router();
 
-// const db = 
+// // const db = 
+
 
 // // Routes
 // // =============================================================
@@ -36,6 +37,11 @@
 //         res.sendFile(path.join(__dirname, ""));
 //     });
 
+// // Get chat page
+// app.get('/chat', function (req, res) {
+//     res.sendFile(path.join(__dirname, '../app/data/public/chat.html'));
+// });
+
 
 // // posting our new users into our db/ taking us to the signup page 
 //     app.post("/User/newuser", function (req, res) {
@@ -50,7 +56,8 @@
 //     });
 
 //     //put route that allows us to update our User's . 
-//     router.put("/api/User", function (req, res) {
+//     // router.put("/api/User", function (req, res) {
 
-//     });
+//     // });
 // };
+
