@@ -1,18 +1,45 @@
 module.exports = function(sequelize, DataTypes) {
-    var Host = sequelize.define("Host", {
-        host_name: {
-            type: DataTypes.STRING,
-            allowNull: false,
-            validate: {
-                len: [1,100]
-            }
+    var Animals = [
+        {
+            name: "T'challa, the Black Panther",
+            photo: "../images/Black_Panther.jpeg",
+            scores: [
+             "3",
+             "3",
+             "3",
+             "3",
+             "3",
+             "3"
+    
+            ]
+    
         },
-        chat_room: {
-            type: DataTypes.STRING,
-            validate: {
-                len: [1,100]
-            }
+       
+        {
+            name: "I pitbull the Fool",
+            photo:"../images/I_Pitbull_the_Fool.jpg",
+            scores: [
+                "2", 
+                "2",
+                "2",
+                "2",
+                "2",
+                "2"
+            ]
+        },
+    
+        {
+            name: "Polar Sweater",
+            photo:"../images/Polar_Sweater.jpg",
+            scores:[
+                "1",
+                "1",
+                "1",
+                "1",
+                "1",
+                "1"
+            ]
         }
-    });
-    return Host;
+    ]
+    return Animals;
 };

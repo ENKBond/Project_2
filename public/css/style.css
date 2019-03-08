@@ -72,3 +72,11 @@ h2, h3 {
 .select{
  background-color: white;
 }
+
+#fantasy{
+  background-color: white;
+  opacity: .9;
+}
+h5{
+  color: black;
+}

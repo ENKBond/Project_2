@@ -6,20 +6,6 @@ $(document).ready(function () {
 
   $('select').formSelect();
 
-  var userData = {
-    scores: [
-      $("#q1").val(),
-      $("#q2").val(),
-      $("#q3").val(),
-      $("#q4").val(),
-      $("#q5").val(),
-      $("#q6").val(),
-    ]
-  };
-
- 
-
-  
 
   // Capture the form inputs
   $("#submit").on("click", function(event) {
@@ -29,7 +15,7 @@ $(document).ready(function () {
     function validateForm() {
       var isValid = true;
 
-      $(".choices").each(function() {
+      $(".chosen-select").each(function() {
 
         if ($(this).val() === "") {
           isValid = false;
@@ -41,16 +27,28 @@ $(document).ready(function () {
     // If all required fields are filled
     if (validateForm()) {
       // Create an object for the user"s data
-
+      var newAnimal = {
+        scores: [
+          $("#q1").val(),
+          $("#q2").val(),
+          $("#q3").val(),
+          $("#q4").val(),
+          $("#q5").val(),
+          $("#q6").val(),
+        ]
+       
+      }; 
+      
+      console.log(newAnimal);
       // AJAX post the data to the friends API.
-      $.post("/api/Animals", userData, function(data) {
+      $.post("/api/Animals", newAnimal, function(data) {
 
         // Grab the result from the AJAX post so that the best match's name and photo are displayed.
         $("#match-name").text(data.name);
         $("#match-img").attr("src", data.photo);
 
         // Show the modal with the best match
-        $("#results-modal").modal("toggle");
+        $("#modal1").modal("toggle");
 
       });
     } else {
