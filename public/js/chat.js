@@ -1,6 +1,6 @@
 // Establish conncetion to server
 // This socket variable is for the frontend (not the server)
-const socket = io.connect('http://localhost:8000');
+const socket = io();
 
 // Query DOM
 const message = document.getElementById('message');
