@@ -30,42 +30,39 @@
     </nav>
 
     <div class="row">
-        <div class="col s12">
-            <div id="form-area">
-                <div id="form-window">
-                    <form id="userForm">
-                        <div class="form-group">
-                            <label>What should we call you?</label>
-                            <input class="form-control" id="name-select" />
-                            <br />
+        <div id="form-area" class="col s12">
+            <div id="form-window">
+                <form id="userForm">
+                    <div class="form-group">
+                        <h4>What should we call you?</h4>
+                        <input class="form-control" id="name-select" />
+                        <br />
+                        <div class="col s1">
                             <button id="confirm">Confirm</button>
                         </div>
-                    </form>
-                </div>
+                    </div>
+                </form>
             </div>
         </div>
+    </div>
 
-        <div class="row">
-            <div id="chat-room">
 
-                <div class="col s4">
-                    <div id="user-window">
-                        <h3>Online Users</h3>
-                        <ul class="list-group" id="users"></ul>
-                    </div>
-                </div>
+    <div class="row">
+        <div id="chat-room">
 
-                <div class="col s8">
-                    <div id="chat-window">
-                        <div id="output"></div>
-                        <div id="feedback"></div>
-                    </div>
-                </div>
-
-                <h5 id="username"></h5>
-                <input id="message" type="text" placeholder="Message">
-                <button id="send">Send</button>
+            <div id="user-window" class="col s3">
+                <h3>Online Users</h3>
+                <ul class="list-group" id="users"></ul>
             </div>
+
+            <div id="chat-window" class="col s9">
+                <div id="output"></div>
+                <div id="feedback"></div>
+            </div>
+
+            <h5 id="username"></h5>
+            <input id="message" type="text" placeholder="Message">
+            <button id="send">Send</button>
         </div>
     </div>
 
