@@ -3,11 +3,17 @@ module.exports = function (io) {
     io.on('connection', function (socket) {
         console.log("Made socket connection: ", socket.id);
 
+
         // listen for emit events
         // when chat message is received, take in data
         socket.on('chat', function (data) {
             // send message to all sockets (plural)
             io.sockets.emit('chat', data);
+        });
+
+        // Send all messages to the console
+        socket.on('chat', function(data){
+            console.log('ID: ' + '"' + socket.id + '"' + " | MSG: " + '"' + data.message + '"');
         });
 
         // when a client is typing, take in handle
