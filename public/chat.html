@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,18 +10,37 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.dev.js"></script>
     <link href="./css/chat.css" rel="stylesheet">
 </head>
+
 <body>
-    <div id="chat-room">
-        <div id="chat-window">
-            <div id="output"></div>
-            <div id="feedback"></div>
+        <div id="form-area">
+            <div id="form-window">
+                <form id="userForm">
+                    <div class="form-group">
+                        <label>What should we call you?</label>
+                        <input class="form-control" id="name-select" />
+                        <br />
+                        <button id="confirm">Confirm</button>
+                    </div>
+                </form>
+            </div>
         </div>
-        <input id="handle" type="text" placeholder="Handle">
-        <input id="message" type="text" placeholder="Message">
-        <button id="send">Send</button>
-    </div>
-    
+
+        <div id="chat-room">
+            <div id="user-window">
+                <h3>Online Users</h3>
+                <ul class="list-group" id="users"></ul>
+            </div>
+            <div id="chat-window">
+                <div id="output"></div>
+                <div id="feedback"></div>
+            </div>
+            <h5 id="username"></h5>
+            <input id="message" type="text" placeholder="Message">
+            <button id="send">Send</button>
+        </div>
+
     <!-- Link to JavaScript -->
     <script src="./js/chat.js"></script>
 </body>
+
 </html>
