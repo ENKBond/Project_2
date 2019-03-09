@@ -2,9 +2,9 @@
 // This socket variable is for the frontend (not the server)
 
 // UNCOMMENT FOR DEPLOYMENT:
-// const socket = io();
+const socket = io();
 // UNCOMMENT FOR TESTING:
-const socket = io('http://localhost:8000');
+// const socket = io('http://localhost:8000');
 
 // Query DOM
 const message = document.getElementById('message');
