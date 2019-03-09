@@ -1,6 +1,9 @@
 // Establish conncetion to server
 // This socket variable is for the frontend (not the server)
+
+// UNCOMMENT FOR DEPLOYMENT:
 // const socket = io();
+// UNCOMMENT FOR TESTING:
 const socket = io('http://localhost:8000');
 
 // Query DOM
