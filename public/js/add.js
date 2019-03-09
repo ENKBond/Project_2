@@ -7,7 +7,11 @@ $("#agree").on("click", function(event) {
     };
 
     if (!newUser.username || !newUser.password) {
+        $("#alert").html("Please fill out all fields");
         return;
+    } else {
+        $("#alert").html("");
+        $(".modal").modal("close");
     }
 
     $.post("/api/signup", newUser)
