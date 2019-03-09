@@ -1,6 +1,7 @@
 const db = require("../models");
 const passport = require("../config/passport");
 var Animals = require("../models/host.js");
+var NewAnimal = require("../controllers/animal.js");
  
 
 module.exports = function(app) {
@@ -51,7 +52,17 @@ module.exports = function(app) {
 
     app.post("/api/Animals", function(req, res) {
         // Note the code here. Our "server" will respond to a user"s survey result
-       
+        console.log(req.body);
+        db.NewAnimal.create({
+            name: req.body.name,
+            score: req.body.score
+        }).then(function() {
+            res.redirect(200, "../chat.html");
+            // res.redirect("./survey.html");
+        }).catch(function(err) {
+            console.log(err);
+            res.json(err);
+        });
     
         // We will use this object to hold the "best match". We will constantly update it as we
         // loop through all of the options
@@ -60,6 +71,8 @@ module.exports = function(app) {
           photo: "",
           userDifference: Infinity
         };
+
+
     
     
     

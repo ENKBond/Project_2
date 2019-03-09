@@ -1,4 +1,4 @@
-module.exports = function(sequelize, DataTypes) {
+
     var Animals = [
         {
             name: "T'challa, the Black Panther",
@@ -40,6 +40,5 @@ module.exports = function(sequelize, DataTypes) {
                 "1"
             ]
         }
-    ]
-    return Animals;
-};
+    ];
+module.exports = Animals;
