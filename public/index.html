@@ -31,6 +31,13 @@
                   <a class="waves-effect waves-light btn modal-trigger" data-target="modal1" id="start-button">Get Started</a>  
                 </div>
 
+                <br>
+
+                <div id="center-button" class="button-center">
+                  <a class="waves-effect waves-light btn modal-trigger" data-target="modal2" id="start-button">Already a member? Log In</a>  
+                </div>
+
+
                
                 <div id="modal1" class="modal">
                     <div class="modal-content" id="modal-content">
@@ -58,6 +65,33 @@
                     </div>
                 </div>
                 <br><br>
+
+                <div id="modal2" class="modal">
+                  <div class="modal-content" id="modal-content">
+                      <h4 id="signUpLabel">Log In</h4>
+                  </div>
+
+                  <div class="row">
+                      <div class="col s12">
+                        <div class="input-field col s12">
+                          <input placeholder="Username" id="username" type="text" class="validate">
+                          <label for="username">username</label>
+                        </div>   
+                      </div>
+                  </div>
+
+                  <div class="row">
+                      <div class="input-field col s12">
+                          <input id="password" type="password" class="validate">
+                          <label for="password">password</label>
+                      </div>
+                  </div>
+                  <div class="row" id="alert"></div>
+                  <div class="modal-footer">
+                      <a href="/survey" class="waves-effect waves-green btn-flat" id="goChat">Go To Chat</a>
+                  </div>
+              </div>
+              <br><br>
 
             </div>
         </div>
@@ -111,8 +145,9 @@
     <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
         crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script src="../js/logic.js"></script>
-    <script src="../js/add.js"></script>
+    <script src="./js/logic.js"></script>
+    <script src="./js/add.js"></script>
+    <script src="./js/login.js"></script>
 </body>
 
 </html>

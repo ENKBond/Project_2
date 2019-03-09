@@ -10,6 +10,7 @@ $("#agree").on("click", function(event) {
         $("#alert").html("Please fill out all fields");
         return;
     } else {
+        $("#alert").html("");
         $(".modal").modal("close");
     }
 

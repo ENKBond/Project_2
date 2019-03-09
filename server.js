@@ -81,7 +81,7 @@ io.sockets.on('connection', function (socket) {
 //routes to be added here
 
 
-db.sequelize.sync({force: true}).then(function() {
+db.sequelize.sync({}).then(function() {
     server.listen(PORT, function() {
         console.log("App listening on PORT" + PORT);
     });
