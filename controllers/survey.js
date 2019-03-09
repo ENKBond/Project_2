@@ -1,4 +1,5 @@
-var Animals = require("../models/host.js");
+var Animal = require("../models/host.js");
+var Animals = require("animal.js")
  
 
 //ROUTING
@@ -54,7 +55,7 @@ module.exports = function(app){
        // If the sum of differences is less then the differences of the current "best match"
        if (totalDifference <= bestMatch.userDifference) {
         // Reset the bestMatch to be the new friend.
-        bestMatch.Usernname = currentUser.user_name;
+        bestMatch.name = currentUser.name;
         bestMatch.photo = currentUser.quizScores;
         bestMatch.userDifference = totalDifference;
       }

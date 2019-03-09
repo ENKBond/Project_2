@@ -3,13 +3,12 @@ var Animals = [
         name: "T'challa, the Black Panther",
         photo: "../images/Black_Panther.jpeg",
         scores: [
-         "3",
-         "3",
-         "3",
-         "3",
-         "3",
-         "3"
-
+            "1", 
+            "3",
+            "2",
+            "1",
+            "2",
+            "3"
         ]
 
     },
@@ -18,11 +17,11 @@ var Animals = [
         name: "I pitbull the Fool",
         photo:"../images/I_Pitbull_the_Fool.jpg",
         scores: [
-            "2", 
+            "3", 
             "2",
+            "1",
             "2",
-            "2",
-            "2",
+            "1",
             "2"
         ]
     },
@@ -30,14 +29,15 @@ var Animals = [
     {
         name: "Polar Sweater",
         photo:"../images/Polar_Sweater.jpg",
-        scores:[
+        scores: [
+            "2", 
             "1",
-            "1",
-            "1",
-            "1",
-            "1",
+            "3",
+            "3",
+            "3",
             "1"
         ]
+        
     }
 ];
 
