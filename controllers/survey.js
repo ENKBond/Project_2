@@ -4,14 +4,20 @@ var Animals = require("../models/host.js");
 //ROUTING
 module.exports = function(app){
 
-    app.get("/api/Animals", function(req, res) {
-        res.json(Animals);
+    app.get("/api/Animal", function(req, res) {
+        res.json(Animal);
       });
     
 
     app.post("/api/Animals", function(req, res) {
         // Note the code here. Our "server" will respond to a user"s survey result
-       
+        db.Animal.create({
+            name: req.body.name,
+            score: req.body.score,
+          })
+            .then(function(dbNewAnimal) {
+              res.json(dbNewAnimal);
+            });
     
         // We will use this object to hold the "best match". We will constantly update it as we
         // loop through all of the options

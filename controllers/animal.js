@@ -1,21 +1,46 @@
-module.exports = function(sequelize, DataTypes) {
-    const NewAnimal = sequelize.define("Animal", {
-        name: {
-            type: DataTypes.STRING,
-            allowNull: false,
-            unique: true,
-            validate: {
-                len: [1,100]
-            }
-        },
-        score: {
-            type: DataTypes.INTEGER,
-            allowNull: false,
-            validate: {
-                len: [1,10]
-            }
-        }
-    });
+var Animals = [
+    {
+        name: "T'challa, the Black Panther",
+        photo: "../images/Black_Panther.jpeg",
+        scores: [
+         "3",
+         "3",
+         "3",
+         "3",
+         "3",
+         "3"
 
-    return NewAnimal;
-};
+        ]
+
+    },
+   
+    {
+        name: "I pitbull the Fool",
+        photo:"../images/I_Pitbull_the_Fool.jpg",
+        scores: [
+            "2", 
+            "2",
+            "2",
+            "2",
+            "2",
+            "2"
+        ]
+    },
+
+    {
+        name: "Polar Sweater",
+        photo:"../images/Polar_Sweater.jpg",
+        scores:[
+            "1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "1"
+        ]
+    }
+];
+
+
+
+module.exports = Animals;

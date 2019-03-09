@@ -1,7 +1,6 @@
 const db = require("../models");
 const passport = require("../config/passport");
 var Animals = require("../models/host.js");
-var NewAnimal = require("../controllers/animal.js");
  
 
 module.exports = function(app) {
@@ -46,7 +45,7 @@ module.exports = function(app) {
         }
     });
     app.get("/api/Animals", function(req, res) {
-        res.json("Animals");
+        res.json(Animals);
       });
     
 
